@@ -16,11 +16,11 @@ import css from "./ContactList.module.css"
     <ul className={css.list}>
       {filter === '' ? (
         contacts.map(({ name, phone, id }) => 
-            {return <li className ={css.phoneItem}key={id}><p>{name}: {phone}</p><button type='button' className={css.button} onClick={() => dispatch(deleteContact(id))}>Delete</button></li>;}
+            {return <li className ={css.phoneItem} key={id}><p>{name}: {phone}</p><button type='button' className={css.button} onClick={() => dispatch(deleteContact(id))}>Delete</button></li>;}
           )
         ) : (
           handleFilteredContacts(contacts).map(({ id, name, phone }) =>   
-          {return <li key={id}><p>{name}: {phone}</p><button type='button' className={css.button} onClick={() => dispatch(deleteContact(id))}>Delete</button></li>;}
+          {return <li className ={css.phoneItem} key={id}><p>{name}: {phone}</p><button type='button' className={css.button} onClick={() => dispatch(deleteContact(id))}>Delete</button></li>;}
           )
       )}
     </ul>
